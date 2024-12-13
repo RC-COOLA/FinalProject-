@@ -4,18 +4,17 @@ import java.util.Scanner;
 
 public class TaskManager.java {
 
-    // Array to store completed tasks (fixed size for simplicity)
+    // One Array to store completed tasks
     static String[] completedTasks = new String[10];
-    // ArrayList to store pending tasks
+    // ArrayList for storing the pending tasks
     static ArrayList<String> pendingTasks = new ArrayList<>();
-    // Scanner for user input
+    // Scanner
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         loadData();
         menu();
     }
-
     // Menu-driven interface
     public static void menu() {
     System.out.println("Task Manager Menu:");
@@ -26,21 +25,21 @@ public class TaskManager.java {
     System.out.println("5. Exit");
     int choice = getIntInput("Please choose an option (1-5): ");
 
-        switch (choice) {
+ switch (choice) {
     case 1:
-                viewPendingTasks();
+            viewPendingTasks();
                 break;
-        case 2:
-                addTask();
+    case 2:
+            addTask();
                 break;
-        case 3:
-                completeTask();
+    case 3:
+            completeTask();
                 break;
-           case 4:
-                viewCompletedTasks();
+    case 4:
+            viewCompletedTasks();
                 break;
-        case 5:
-                saveData();
+    case 5:
+            saveData();
                 System.out.println("Exiting...");
                 System.exit(0);
                 break;
@@ -63,17 +62,17 @@ public class TaskManager.java {
         menu();
     }
 
-    // Add a new task to pending tasks
+    // new task to the pending tasks
     public static void addTask() {
-        System.out.print("Enter task description: ");
-        String task = scanner.nextLine();
-        pendingTasks.add(task);
-        System.out.println("Task added.");
+    System.out.print("Enter task description: ");
+    String task = scanner.nextLine();
+    pendingTasks.add(task);
+    System.out.println("Task added.");
         menu();
     }
     public static void completeTask() {
         viewPendingTasks();
-        int taskIndex = getIntInput("Enter the number of the task to complete: ") - 1;
+        int taskIndex = getIntInput("Enter the number of the tasks to do: ") - 1;
 
         try {
             if (taskIndex < 0 || taskIndex >= pendingTasks.size()) {
@@ -88,7 +87,7 @@ public class TaskManager.java {
         menu();
     }
 
-    // Add completed task to the array
+    // Completed task to the array
     public static void addCompletedTask(String task) {
         for (int i = 0; i < completedTasks.length; i++) {
             if (completedTasks[i] == null) {
@@ -137,7 +136,7 @@ public class TaskManager.java {
             }
             writer.close();
 
-            // Here is hwere I Save the completed tasks 
+            // Here is hwere I Saved the completed tasks 
             writer = new BufferedWriter(new FileWriter("completedTasks.txt"));
             for (String task : completedTasks) {
                 if (task != null) {
