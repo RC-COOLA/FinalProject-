@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TaskManager.java {
+public class TaskManager {
 
     // One Array to store completed tasks
     static String[] completedTasks = new String[10];
