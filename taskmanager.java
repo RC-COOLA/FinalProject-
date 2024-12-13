@@ -15,6 +15,8 @@ public class TaskManager {
         loadData();
         menu();
     }
+
+
     // Menu-driven interface
     public static void menu() {
     System.out.println("Task Manager Menu:");
@@ -49,6 +51,7 @@ public class TaskManager {
         }
     }
 
+    
     // Here are the pending task loading
     public static void viewPendingTasks() {
         System.out.println("Pending Tasks:");
@@ -62,6 +65,7 @@ public class TaskManager {
         menu();
     }
 
+
     // new task to the pending tasks
     public static void addTask() {
     System.out.print("Enter task description: ");
@@ -70,6 +74,11 @@ public class TaskManager {
     System.out.println("Task added.");
         menu();
     }
+
+
+
+
+    
     public static void completeTask() {
         viewPendingTasks();
         int taskIndex = getIntInput("Enter the number of the tasks to do: ") - 1;
@@ -97,6 +106,10 @@ public class TaskManager {
         }
         System.out.println("Completed tasks list is full.");
     }
+
+
+
+    
     public static void viewCompletedTasks() {
         System.out.println("Completed Tasks:");
         boolean hasCompletedTasks = false;
@@ -111,6 +124,9 @@ public class TaskManager {
         }
         menu();
     }
+
+
+    
     public static int getIntInput(String prompt) {
         int value = -1;
         while (value == -1) {
@@ -124,6 +140,9 @@ public class TaskManager {
         return value;
     }
 
+
+
+    
     // Save the pending tasks and completed tasks to files
     public static void saveData() {
         try {
