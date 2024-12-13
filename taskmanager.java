@@ -27,24 +27,24 @@ public class TaskManager {
 
  switch (choice) {
     case 1:
-            viewPendingTasks();
+        viewPendingTasks();
                 break;
     case 2:
-            addTask();
+        addTask();
                 break;
     case 3:
-            completeTask();
+         completeTask();
                 break;
     case 4:
-            viewCompletedTasks();
+         viewCompletedTasks();
                 break;
     case 5:
-            saveData();
-                System.out.println("Exiting...");
-                System.exit(0);
+        saveData();
+            System.out.println("Exiting...");
+            System.exit(0);
                 break;
             default:
-                System.out.println("Invalid choice. Please try again.");
+            System.out.println("Invalid choice. Please try again.");
                 menu();
         }
     }
@@ -97,8 +97,6 @@ public class TaskManager {
         }
         System.out.println("Completed tasks list is full.");
     }
-
-    // View completed tasks
     public static void viewCompletedTasks() {
         System.out.println("Completed Tasks:");
         boolean hasCompletedTasks = false;
